@@ -378,10 +378,11 @@ main { display: block; }
 .marquee { overflow: hidden; }
 .marquee__track {
   display: flex;
-  gap: 16px;
   width: max-content;
   animation: marquee 42s linear infinite;
 }
+/* uniform margin (not flex gap) so translateX(-50%) lands exactly on the loop seam */
+.marquee__track .tile { margin-right: 16px; }
 .marquee__track--rev { animation-direction: reverse; }
 .marquee:hover .marquee__track { animation-play-state: paused; }
 
@@ -1172,12 +1173,6 @@ main { display: block; }
   transition: transform 0.13s ease;
 }
 .footer__credit a:hover { transform: translate(-2px, -2px) rotate(-1deg); }
-
-.footer__bottom {
-  font: 400 12px/1.7 var(--font-mono);
-  color: rgba(250, 243, 230, 0.55);
-  margin-top: 10px;
-}
 
 /* ---------- Responsive ---------- */
 @media (max-width: 1080px) {

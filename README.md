@@ -40,6 +40,4 @@ npm run lint     # oxlint
 - Live Kathmandu (NPT) clock in the nav
 - Fully responsive down to 390px
 
-© 2026 Bishnu Neupane - काठमाडौं, नेपाल
-
 Created & template by [bishnuneup4ne](https://github.com/bishnuneup4ne)

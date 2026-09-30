@@ -455,10 +455,16 @@ function FirstGlance() {
 }
 
 function TechMarquee({ items, reverse = false }: { items: typeof TECHS; reverse?: boolean }) {
-  const loop = [...items, ...items];
+  // tile (62px) + spacing (16px) = 78px per slot; keep each half >= ~3100px so the band never runs out on wide screens
+  const reps = Math.max(2, Math.ceil(40 / items.length));
+  const half = Array.from({ length: reps }, () => items).flat();
+  const loop = [...half, ...half];
   return (
     <div className="marquee" aria-hidden="true">
-      <div className={`marquee__track${reverse ? " marquee__track--rev" : ""}`}>
+      <div
+        className={`marquee__track${reverse ? " marquee__track--rev" : ""}`}
+        style={{ animationDuration: `${half.length * 2.6}s` }}
+      >
         {loop.map((t, i) => (
           <span key={`${t.name}-${i}`} className="tile tile--mini" style={{ "--tile": GROUP_COLOR[t.group] } as React.CSSProperties}>
             <span className="tile__icon" style={{ color: t.color }}>{t.icon ?? <MonoMark name={t.name} />}</span>
@@ -909,7 +915,6 @@ function Footer() {
             bishnuneup4ne <span aria-hidden="true">↗</span>
           </a>
         </p>
-        <p className="footer__bottom">© 2026 Bishnu Neupane · 27.71°N / 85.32°E — काठमाडौं, नेपाल · built by hand, no templates</p>
       </div>
     </footer>
   );
