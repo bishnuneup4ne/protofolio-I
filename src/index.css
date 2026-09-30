@@ -1,0 +1,156 @@
+/* ============================================================
+   NEO-BRUTALIST COLORFUL BASE — cream canvas, ink borders,
+   hard offset shadows, sticker blocks
+   ============================================================ */
+
+:root {
+  --bg: #faf3e6;
+  --bg-2: #fffdf7;
+  --ink: #14120f;
+  --g1: #5c574e;
+  --g3: #8d8678;
+  --line: #14120f;
+
+  /* sticker palette */
+  --yellow: #ffd23f;
+  --pink: #ff5da2;
+  --blue: #56a0ff;
+  --mint: #5fe3a1;
+  --purple: #b28dff;
+  --orange: #ff9633;
+  --red: #ff5353;
+  --cyan: #57e2e8;
+  --lime: #c8f05a;
+
+  --font-display: "Archivo Black", "Arial Black", sans-serif;
+  --font-body: "Space Grotesk", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --font-hand: "Caveat", cursive;
+  --font-marker: "Permanent Marker", cursive;
+
+  /* hard shadows */
+  --sh-sm: 3px 3px 0 var(--ink);
+  --sh-md: 5px 5px 0 var(--ink);
+  --sh-lg: 8px 8px 0 var(--ink);
+  --bd: 3px solid var(--ink);
+  --r-sm: 10px;
+  --r-md: 16px;
+  --r-lg: 22px;
+  --r-pill: 999px;
+
+  color-scheme: light;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+/* Lenis smooth scroll base */
+html { scroll-behavior: auto; }
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 400 16px/1.6 var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  /* dotted graph-paper backdrop */
+  background-image: radial-gradient(rgba(20, 18, 15, 0.09) 1.2px, transparent 1.2px);
+  background-size: 22px 22px;
+}
+
+::selection { background: var(--yellow); color: var(--ink); }
+
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; margin: 0; padding: 0; }
+h1, h2, h3, p { margin: 0; }
+
+img, svg { display: block; }
+
+button, input, select, textarea { font: inherit; color: inherit; }
+
+/* ---------- Type primitives ---------- */
+.display {
+  font: 400 clamp(64px, 11vw, 150px)/0.92 var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+.h-section {
+  font: 400 clamp(40px, 6vw, 82px)/0.95 var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+.overline {
+  font: 600 11px/1.4 var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: .22em;
+  color: var(--g1);
+}
+.mono { font-family: var(--font-mono); }
+.hand { font-family: var(--font-hand); }
+
+/* text with a marker highlight behind it */
+.hl {
+  background: linear-gradient(104deg, transparent 2%, var(--yellow) 4% 96%, transparent 98%);
+  padding: 0.06em 0.3em;
+  border-radius: 6px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.hl--pink { background: linear-gradient(104deg, transparent 2%, var(--pink) 4% 96%, transparent 98%); }
+.hl--mint { background: linear-gradient(104deg, transparent 2%, var(--mint) 4% 96%, transparent 98%); }
+
+/* Outline-only text */
+.outline-text {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--ink);
+}
+
+.muted { color: var(--g1); }
+
+/* ---------- Shared brutal primitives ---------- */
+.brutal-card {
+  background: var(--bg-2);
+  border: var(--bd);
+  border-radius: var(--r-md);
+  box-shadow: var(--sh-md);
+}
+
+.brutal-btn {
+  display: inline-block;
+  background: var(--yellow);
+  border: var(--bd);
+  border-radius: var(--r-pill);
+  box-shadow: var(--sh-sm);
+  padding: 12px 26px;
+  font: 700 15px/1 var(--font-body);
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.brutal-btn:hover { transform: translate(-2px, -2px); box-shadow: 5px 5px 0 var(--ink); }
+.brutal-btn:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--ink); }
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 2px solid var(--ink);
+  border-radius: var(--r-pill);
+  padding: 4px 14px;
+  font: 600 12px/1.6 var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: var(--bg-2);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

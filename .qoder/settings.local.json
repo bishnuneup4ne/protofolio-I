@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -v && npm -v && git config --global user.name >/dev/null 2>&1; echo ok)",
+      "Bash(ls /home/bishnuneup4ne/protofolio && find /home/bishnuneup4ne/protofolio -maxdepth 3 -type d -not -path '*/node_modules*' -not -path '*/.git*' -not -path '*/dist*' -not -path '*/.next*' | head -50)"
+    ]
+  }
+}
