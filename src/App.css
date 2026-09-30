@@ -1156,6 +1156,23 @@ main { display: block; }
 .footer .chip--link:hover { background: var(--yellow); color: var(--ink); border-color: var(--ink); }
 .footer__nav { display: flex; gap: 8px; flex-wrap: wrap; }
 
+.footer__credit {
+  font: 700 14px/1.5 var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.footer__credit a {
+  background: var(--yellow);
+  color: var(--ink);
+  border: 2px solid var(--bg);
+  border-radius: var(--r-pill);
+  padding: 4px 14px;
+  box-shadow: 3px 3px 0 var(--pink);
+  display: inline-block;
+  transition: transform 0.13s ease;
+}
+.footer__credit a:hover { transform: translate(-2px, -2px) rotate(-1deg); }
+
 .footer__bottom {
   font: 400 12px/1.7 var(--font-mono);
   color: rgba(250, 243, 230, 0.55);

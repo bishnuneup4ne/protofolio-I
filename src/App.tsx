@@ -903,6 +903,12 @@ function Footer() {
           </nav>
           <a className="chip chip--link" href="https://github.com/bishnuneup4ne" target="_blank" rel="noreferrer">github ↗</a>
         </div>
+        <p className="footer__credit">
+          Created &amp; template by{" "}
+          <a href="https://github.com/bishnuneup4ne" target="_blank" rel="noreferrer">
+            bishnuneup4ne <span aria-hidden="true">↗</span>
+          </a>
+        </p>
         <p className="footer__bottom">© 2026 Bishnu Neupane · 27.71°N / 85.32°E — काठमाडौं, नेपाल · built by hand, no templates</p>
       </div>
     </footer>
