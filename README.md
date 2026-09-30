@@ -1,33 +1,43 @@
-# React + TypeScript + Vite
+# Bishnu Neupane — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Cybersecurity × AI-assisted web development portfolio, built completely by hand —
+no component libraries, no templates. Neo-brutalist design system: sticker blocks,
+hard offset shadows, hand-drawn SVG doodles, and GSAP scroll reveals.
 
-Currently, two official plugins are available:
+![Portfolio preview](public/preview.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Pages
 
-## React Compiler
+- **Home** — color-block hero, doodle stickers, rotating badge, scrolling tech marquee
+- **About** — sticker-board collage, facts table, links
+- **Skills** — 47 tools as an icon-only sticker grid across 6 lanes (hover to reveal names)
+- **Projects** — alternating case-file cards with framed covers, plus an "on the bench" section
+- **Education** — stamp timeline of SEE / +2 NEB / BE, coursework chips, ticket-style certs
+- **Contact** — brutal form (opens mail client) and social links
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Stack
 
-## Expanding the Oxlint configuration
+| Layer   | Tech                                              |
+| ------- | ------------------------------------------------- |
+| Framework | [React 19](https://react.dev) + [TypeScript](https://typescriptlang.org) on [Vite](https://vite.dev) |
+| Routing | react-router-dom (HashRouter)                     |
+| Motion  | GSAP + ScrollTrigger, Lenis smooth scroll         |
+| Styling | Hand-rolled CSS design system (`src/index.css` + `src/App.css`) |
+| Icons   | Hand-drawn SVG doodles + brand marks (`src/components/Icons.tsx`) |
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## Run locally
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
+npm run dev      # http://localhost:5173
+npm run build    # production build in dist/
+npm run lint     # oxlint
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
-# protofolio-I
+## Details
+
+- Respects `prefers-reduced-motion` (marquees, reveals, badge rings)
+- Live Kathmandu (NPT) clock in the nav
+- Fully responsive down to 390px
+
+© 2026 Bishnu Neupane · 27.71°N / 85.32°E — काठमाडौं, नेपाल
